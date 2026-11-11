@@ -29,6 +29,16 @@ Shared: database design, code reviews, testing, deployment, demo.
 - Real payment processing (settlements are records only)
 - Multiple currencies
 
+### Tech stack
+
+| Layer | Technology | Responsibility |
+|-------|------------|----------------|
+| Front end | React + TypeScript | Browser screens for households, expenses, balances, and chores |
+| Back end | Python + Flask | API requests, validation, permissions, expense shares, and balances |
+| Database | PostgreSQL + SQLAlchemy | Persistent users, memberships, expenses, shares, settlements, and chores |
+
+Example request flow: the user adds an expense in React, Flask validates it and saves it through SQLAlchemy to PostgreSQL, and React displays the updated balances.
+
 ## 2. Users and roles
 
 - **Visitor**: not logged in. Can only register or log in.
@@ -141,6 +151,8 @@ Net balance for a user = total they are owed minus total they owe. Sum of all ne
 
 ## 6. Data model
 
+PostgreSQL tables, defined as SQLAlchemy models.
+
 | Table | Columns | Constraints |
 |-------|---------|-------------|
 | users | id, email, password_hash, display_name, created_at | email unique, stored lowercase |
@@ -160,7 +172,7 @@ households 1--* chores (assignee -> users)
 
 ## 7. API contracts
 
-JSON over HTTP. All paths start with `/api`. Auth uses a session cookie set at login.
+JSON over HTTP between the React front end and the Flask back end. All paths start with `/api`. Auth uses Flask's session cookie set at login.
 
 Conventions:
 
@@ -247,6 +259,5 @@ The dashboard (F5) is built on the client from the balances, chores, and expense
 
 ## 10. Open questions for the team
 
-- Tech stack: the proposal slides list React + TypeScript, Python + Flask, and PostgreSQL + SQLAlchemy. Confirm before Milestone 2.
 - Hosting provider for deployment.
 - Should settlements be allowed to exceed the current debt (creating a reverse debt)? Current spec: no.
