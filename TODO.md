@@ -8,14 +8,14 @@ See `specifications.md` for details on every item.
 - [x] Write `specifications.md`: scope, user stories, screens, business rules, data model, API contracts (All)
 - [x] Write `TODO.md` (All)
 - [ ] Team review of `specifications.md`; resolve open questions in section 10 (All)
-- [ ] Repo setup: `frontend/` (React + TypeScript), `backend/` (Flask + SQLAlchemy), local PostgreSQL, `.gitignore`, README with run instructions (All)
-- [ ] Agree on workflow: one branch per task, small PRs, one reviewer approval before merge (All)
+- [x] Repo setup: `frontend/` (React + TypeScript), `backend/` (Flask + SQLAlchemy), local PostgreSQL, `.gitignore`, README with run instructions (All)
+- [ ] Agree on workflow: drafted in README, needs team sign-off (All)
 - [ ] Add all three members as repo collaborators (N)
-- [ ] Rough wireframes for the 8 screens in spec section 4 (A)
+- [x] Rough wireframes for the 8 screens in spec section 4: `wireframes.md`, Anusha to review (A)
 
 ## Milestone 2 - Accounts and households
 
-- [ ] Database tables: users, households, memberships (G)
+- [x] Database tables: users, households, memberships (`backend/models.py`) (G)
 - [ ] Register / login / logout / me endpoints, password hashing (G)
 - [ ] Create household, join by invite code, list my households, get household (G)
 - [ ] Server-side membership check reused by every `/api/households/:hid/...` route (G)
@@ -28,7 +28,7 @@ See `specifications.md` for details on every item.
 
 ### Expenses, balances, settlements (N)
 
-- [ ] Tables: expenses, expense_shares, settlements
+- [x] Tables: expenses, expense_shares, settlements (`backend/models.py`)
 - [ ] Equal-split function in integer cents (spec 5.1)
 - [ ] Expense CRUD endpoints with creator/owner permissions
 - [ ] Balance calculation (spec 5.2) and `/balances` endpoint
@@ -38,7 +38,7 @@ See `specifications.md` for details on every item.
 
 ### Chores and dashboard (A)
 
-- [ ] Table: chores
+- [x] Table: chores (`backend/models.py`)
 - [ ] Chore CRUD endpoints, mark done / undo
 - [ ] Chores screen with open/done tabs and overdue highlighting
 - [ ] Dashboard screen (my balance, my open chores, 5 recent expenses)

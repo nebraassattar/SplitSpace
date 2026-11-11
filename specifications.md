@@ -103,6 +103,8 @@ This example must pass as an automated test.
 
 ## 4. Screens
 
+Layouts for each screen are in `wireframes.md`.
+
 | Screen | Path | Contents |
 |--------|------|----------|
 | Login | `/login` | Email, password, link to register |
